@@ -1,0 +1,34 @@
+# E-commerce Demand Forecasting & Inventory Optimization
+
+This project's main goal is to forecast product demand for an e-commerce business and use the forecasts to make better inventory decisions, such as how much inventory stock should be ther at any given time and when to reorder stock.
+
+## Dataset
+
+The project uses the **DataCo Supply Chain dataset** along with access log data.
+
+* `DataCoSupplyChainDataset.csv` — this is the main dataset
+* `tokenized_access_logs.csv` — the access log data for the products/items
+* `DescriptionDataCoSupplyChain.csv` — data dictionary of the main dataset
+
+The datasets are not included in this GitHub repository because the files are large.
+
+## Setup
+
+Create and activate a virtual environment:
+
+```bash
+python -m venv venv
+venv\Scripts\activate
+```
+
+Install the required libraries:
+
+```bash
+pip install -r requirements.txt
+```
+
+## Current Status
+
+**Environment Setup** is done
+**Project Structure** is defined
+**Necessary files** required till now are created
