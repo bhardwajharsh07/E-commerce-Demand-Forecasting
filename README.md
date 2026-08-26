@@ -4,40 +4,13 @@ This project's main goal is to forecast product demand for an e-commerce busines
 
 ## Dataset
 
-The project uses the **DataCo Supply Chain dataset** along with access log data.
+The project uses the **DataCo Supply Chain dataset** along with **Access Log Data**.
 
-* `DataCoSupplyChainDataset.csv` — this is the main dataset
-* `tokenized_access_logs.csv` — the access log data for the products/items
-* `DescriptionDataCoSupplyChain.csv` — data dictionary of the main dataset
+* DataCoSupplyChainDataset.csv - this is the main dataset
+* tokenized_access_logs.csv - the access log data for the products/items
+* DescriptionDataCoSupplyChain.csv - data dictionary of the main dataset
 
 The datasets are not included in this GitHub repository because the files are large.
-
-## Project Structure
-
-```text
-E-commerce-Demand-Forecasting/
-│
-├── data/
-│   └── raw/
-│       ├── DataCoSupplyChainDataset.csv
-│       ├── tokenized_access_logs.csv
-│       └── DescriptionDataCoSupplyChain.csv
-│
-├── notebooks/
-│
-├── src/
-│   ├── logger.py
-│   ├── exception.py
-│   └── components/
-│       └── data_ingestion.py
-│
-├── artifacts/
-│
-├── requirements.txt
-├── README.md
-└── .gitignore
-```
-
 
 ## Setup
 
