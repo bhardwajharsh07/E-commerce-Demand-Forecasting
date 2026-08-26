@@ -52,7 +52,14 @@ Create and activate a virtual environment:
 
 ```bash
 python -m venv venv
+```
+Activate in Windows
+```bash
 venv\Scripts\activate
+```
+Activate in MacOS
+```bash
+source venv/bin/activate
 ```
 
 Install the required libraries:
@@ -63,13 +70,13 @@ pip install -r requirements.txt
 
 ## Update 1
 
-**Environment Setup** is done
-**Project Structure** is defined
-**Necessary files** required till now are created
+**Environment Setup** is done  
+**Project Structure** is defined  
+**Necessary files** required till now are created  
 
 ## Update 2
 
-**Logging** is implemented
-**Custom Exception Handling** is implemented
-**Data Ingestion** is implemented with logging and exception handling
-**Git Branching & Pull Request Workflow** is completed
+**Logging** is implemented  
+**Custom Exception Handling** is implemented  
+**Data Ingestion** is implemented with logging and exception handling  
+**Git Branching & Pull Request Workflow** is completed  
