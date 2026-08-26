@@ -12,7 +12,30 @@ The project uses the **DataCo Supply Chain dataset** along with access log data.
 
 The datasets are not included in this GitHub repository because the files are large.
 
+## Project Structure
+
+E-commerce-Demand-Forecasting/
+├── data/
+│   └── raw/
+├── notebooks/
+├── src/
+│   ├── components/
+│   │   └── data_ingestion.py
+│   ├── exception.py
+│   └── logger.py
+├── artifacts/
+├── requirements.txt
+├── README.md
+└── .gitignore
+
 ## Setup
+
+Clone this repository
+
+```bash
+git clone <https://github.com/bhardwajharsh07/E-commerce-Demand-Forecasting>
+cd E-commerce-Demand-Forecasting
+```
 
 Create and activate a virtual environment:
 
@@ -27,8 +50,15 @@ Install the required libraries:
 pip install -r requirements.txt
 ```
 
-## Current Status
+## Update 1
 
 **Environment Setup** is done
 **Project Structure** is defined
 **Necessary files** required till now are created
+
+## Update 2
+
+**Logging** is implemented
+**Custom Exception Handling** is implemented
+**Data Ingestion** is implemented with logging and exception handling
+**Git Branching & Pull Request Workflow** is completed
