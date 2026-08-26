@@ -17,7 +17,7 @@ The datasets are not included in this GitHub repository because the files are la
 Clone this repository
 
 ```bash
-git clone <https://github.com/bhardwajharsh07/E-commerce-Demand-Forecasting>
+git clone https://github.com/bhardwajharsh07/E-commerce-Demand-Forecasting
 cd E-commerce-Demand-Forecasting
 ```
 
