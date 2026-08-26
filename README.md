@@ -14,19 +14,30 @@ The datasets are not included in this GitHub repository because the files are la
 
 ## Project Structure
 
+```text
 E-commerce-Demand-Forecasting/
+│
 ├── data/
 │   └── raw/
+│       ├── DataCoSupplyChainDataset.csv
+│       ├── tokenized_access_logs.csv
+│       └── DescriptionDataCoSupplyChain.csv
+│
 ├── notebooks/
+│
 ├── src/
-│   ├── components/
-│   │   └── data_ingestion.py
+│   ├── logger.py
 │   ├── exception.py
-│   └── logger.py
+│   └── components/
+│       └── data_ingestion.py
+│
 ├── artifacts/
+│
 ├── requirements.txt
 ├── README.md
 └── .gitignore
+```
+
 
 ## Setup
 
