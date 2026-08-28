@@ -1,8 +1,14 @@
 import logging
 import os
+import socket
 from datetime import datetime
 
-LOG_FILE = f"{datetime.now().strftime('%m_%d_%Y_%H_%M_%S')}.log"
+DEVICE_NAME = socket.gethostname()
+
+LOG_FILE = (
+    f"{DEVICE_NAME}_"
+    f"{datetime.now().strftime('%m_%d_%Y_%H_%M_%S')}.log"
+)
 
 logs_dir = os.path.join(os.getcwd(), "logs")
 os.makedirs(logs_dir, exist_ok=True)
