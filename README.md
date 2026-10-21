@@ -111,9 +111,9 @@ pip install -r requirements.txt
 
 ## Update 3
 
-**Exploratory Data Analysis (EDA)** is completed
-**Demand Patterns and Trends** are analyzed
-**Product, Pricing and Discount Patterns** are analyzed
-**Baseline Forecasting Model** is implemented
-**Baseline Performance** is evaluated using MAE and RMSE
-**Initial Data Insights** are noted
+**Exploratory Data Analysis (EDA)** is completed  
+**Demand Patterns and Trends** are analyzed  
+**Product, Pricing and Discount Patterns** are analyzed  
+**Baseline Forecasting Model** is implemented  
+**Baseline Performance** is evaluated using MAE and RMSE  
+**Initial Data Insights** are noted  
