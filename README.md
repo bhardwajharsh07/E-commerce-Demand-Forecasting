@@ -108,3 +108,12 @@ pip install -r requirements.txt
 **Custom Exception Handling** is implemented  
 **Data Ingestion** is implemented with logging and exception handling  
 **Git Branching & Pull Request Workflow** is completed  
+
+## Update 3
+
+**Exploratory Data Analysis (EDA)** is completed
+**Demand Patterns and Trends** are analyzed
+**Product, Pricing and Discount Patterns** are analyzed
+**Baseline Forecasting Model** is implemented
+**Baseline Performance** is evaluated using MAE and RMSE
+**Initial Data Insights** are noted
