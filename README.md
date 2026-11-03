@@ -117,3 +117,11 @@ pip install -r requirements.txt
 **Baseline Forecasting Model** is implemented  
 **Baseline Performance** is evaluated using MAE and RMSE  
 **Initial Data Insights** are noted  
+
+## Update 4
+
+**Data Ingestion Pipeline** is enhanced with chronological train-test splitting  
+**DateTime Feature Extraction** is implemented  
+**Numerical and Categorical Features** are identified and processed  
+**Missing Values, Scaling and One-Hot Encoding** are handled using Scikit-learn Pipelines and ColumnTransformer  
+**Reusable Preprocessing Pipeline** is saved and verified  
