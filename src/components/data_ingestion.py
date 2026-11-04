@@ -60,18 +60,18 @@ class DataIngestion:
                 self.raw_data_path,
                 index=False
             )
+   
+            # Split chronologically using calendar dates.
+            # All transactions from the same date stay in one dataset.
 
-            # Split chronologically: earliest 80% for training,
-            # latest 20% for testing.
-            split_index = int(len(df) * 0.8)
+            df["order_date_day"] = df[order_date_col].dt.normalize()
 
-            if split_index == 0 or split_index == len(df):
-                raise ValueError(
-                    "Insufficient records for a train-test split."
-                )
-
-            # Keep all records from the same date in the same split.
-            unique_dates = df[order_date_col].drop_duplicates().sort_values()
+            unique_dates = (
+                df["order_date_day"]
+                .drop_duplicates()
+                .sort_values()
+                .reset_index(drop=True)
+            )
 
             date_split_index = int(len(unique_dates) * 0.8)
 
@@ -82,8 +82,17 @@ class DataIngestion:
 
             split_date = unique_dates.iloc[date_split_index]
 
-            train_set = df[df[order_date_col] < split_date].copy()
-            test_set = df[df[order_date_col] >= split_date].copy()
+            train_set = df[
+                df["order_date_day"] < split_date
+            ].copy()
+
+            test_set = df[
+                df["order_date_day"] >= split_date
+            ].copy()
+
+            # Remove the temporary splitting column.
+            train_set.drop(columns=["order_date_day"], inplace=True)
+            test_set.drop(columns=["order_date_day"], inplace=True)
 
             if train_set.empty or test_set.empty:
                 raise ValueError(
@@ -93,16 +102,14 @@ class DataIngestion:
             train_set.to_csv(self.train_data_path, index=False)
             test_set.to_csv(self.test_data_path, index=False)
 
-            logging.info(
-                f"Training data: {train_set.shape[0]} rows"
-            )
-            logging.info(
-                f"Testing data: {test_set.shape[0]} rows"
-            )
-            logging.info(
-                f"Chronological split date: {split_date}"
-            )
+            logging.info(f"Training data: {train_set.shape[0]} rows")
+
+            logging.info(f"Testing data: {test_set.shape[0]} rows")
+
+            logging.info(f"Chronological split date: {split_date}")
+
             logging.info("Data ingestion completed successfully")
+
 
             return self.train_data_path, self.test_data_path
 
