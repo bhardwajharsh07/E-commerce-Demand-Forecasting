@@ -25,9 +25,7 @@ class DataIngestion:
             if df.empty:
                 raise ValueError("The source dataset is empty.")
 
-            logging.info(
-                f"Loaded {df.shape[0]} rows and {df.shape[1]} columns"
-            )
+            logging.info(f"Loaded {df.shape[0]} rows and {df.shape[1]} columns")
 
             # Identify and convert date columns.
             date_cols = [
@@ -42,9 +40,7 @@ class DataIngestion:
             order_date_col = "order date (DateOrders)"
 
             if order_date_col not in df.columns:
-                raise ValueError(
-                    f"Required column '{order_date_col}' not found."
-                )
+                raise ValueError(f"Required column '{order_date_col}' not found.")
 
             if df[order_date_col].isna().any():
                 raise ValueError(
@@ -56,10 +52,7 @@ class DataIngestion:
 
             os.makedirs("artifacts", exist_ok=True)
 
-            df.to_csv(
-                self.raw_data_path,
-                index=False
-            )
+            df.to_csv(self.raw_data_path, index=False)
    
             # Split chronologically using calendar dates.
             # All transactions from the same date stay in one dataset.
@@ -76,28 +69,19 @@ class DataIngestion:
             date_split_index = int(len(unique_dates) * 0.8)
 
             if date_split_index == 0 or date_split_index == len(unique_dates):
-                raise ValueError(
-                    "Insufficient unique dates for a chronological split."
-                )
+                raise ValueError("Insufficient unique dates for a chronological split.")
 
             split_date = unique_dates.iloc[date_split_index]
 
-            train_set = df[
-                df["order_date_day"] < split_date
-            ].copy()
-
-            test_set = df[
-                df["order_date_day"] >= split_date
-            ].copy()
+            train_set = df[df["order_date_day"] < split_date].copy()
+            test_set = df[df["order_date_day"] >= split_date].copy()
 
             # Remove the temporary splitting column.
             train_set.drop(columns=["order_date_day"], inplace=True)
             test_set.drop(columns=["order_date_day"], inplace=True)
 
             if train_set.empty or test_set.empty:
-                raise ValueError(
-                    "Chronological split produced an empty dataset."
-                )
+                raise ValueError("Chronological split produced an empty dataset.")
 
             train_set.to_csv(self.train_data_path, index=False)
             test_set.to_csv(self.test_data_path, index=False)
@@ -116,3 +100,5 @@ class DataIngestion:
         except Exception as e:
             logging.error("Data ingestion failed")
             raise CustomException(e, sys)
+
+        
